@@ -3,7 +3,7 @@
 			<div class="site-header">
 				<div class="container">
 					<a href="index.html" class="branding">
-						<img src="images/logo.png" alt="" class="logo">
+						<img src="assets/img/logo.png" alt="" class="logo">
 						<div class="logo-type">
 							<h1 class="site-title">Lets-Cast</h1>
 							<small class="site-description">An Ease Way of Forecasting</small>
@@ -25,7 +25,7 @@
 				</div>
 			</div> <!-- .site-header -->
 
-			<div class="hero" data-bg-image="images/banner.png">
+			<div class="hero" data-bg-image="assets/img/banner.png">
 				<div class="container">
 					<form action="#" class="find-location" [formGroup]="weatherSearchForm" (ngSubmit)="sendToAPIXU(weatherSearchForm.value)" >
 						<input type="text" placeholder="Find your location..." formControlName="location" />
@@ -40,19 +40,19 @@
 						<div class="today forecast">
 							<div class="forecast-header">
 								<div class="day">Monday</div>
-								<div class="date">6 Oct</div>
+								<div class="date">{{this.weatherData?.location.localtime}}</div>
 							</div> <!-- .forecast-header -->
 							<div class="forecast-content">
-								<div class="location">New York</div>
+								<div class="location">{{this.weatherData?.location.name}}</div>
 								<div class="degree">
 									<div class="num">{{this.weatherData?.current.temperature}}<sup>o</sup>C</div>
 									<div class="forecast-icon">
-										<img src="images/icons/icon-1.svg" alt="" width=90>
+										<img src="assets/img/icons/icon-1.svg" alt="" width=90>
 									</div>	
 								</div>
-								<span><img src="images/icon-umberella.png" alt="">20%</span>
-								<span><img src="images/icon-wind.png" alt="">18km/h</span>
-								<span><img src="images/icon-compass.png" alt="">East</span>
+								<span><img src="assets/img/icon-umberella.png" alt="">{{this.weatherData?.current.humidity}}</span>
+								<span><img src="assets/img/icon-wind.png" alt="">{{this.weatherData?.current.wind_speed}}km/h</span>
+								<span><img src="assets/img/icon-compass.png" alt="">{{this.weatherData?.current.wind_dir}}</span>
 							</div>
 						</div>
 						<div class="forecast">
@@ -61,9 +61,9 @@
 							</div> <!-- .forecast-header -->
 							<div class="forecast-content">
 								<div class="forecast-icon">
-									<img src="images/icons/icon-3.svg" alt="" width=48>
+									<img src="assets/img/icons/icon-3.svg" alt="" width=48>
 								</div>
-								<div class="degree">23<sup>o</sup>C</div>
+								<div class="degree">23.2<sup>o</sup>C</div>
 								<small>18<sup>o</sup></small>
 							</div>
 						</div>
@@ -73,9 +73,9 @@
 							</div> <!-- .forecast-header -->
 							<div class="forecast-content">
 								<div class="forecast-icon">
-									<img src="images/icons/icon-5.svg" alt="" width=48>
+									<img src="assets/img/icons/icon-3.svg" alt="" width=48>
 								</div>
-								<div class="degree">23<sup>o</sup>C</div>
+								<div class="degree">18.1<sup>o</sup>C</div>
 								<small>18<sup>o</sup></small>
 							</div>
 						</div>
@@ -85,9 +85,9 @@
 							</div> <!-- .forecast-header -->
 							<div class="forecast-content">
 								<div class="forecast-icon">
-									<img src="images/icons/icon-7.svg" alt="" width=48>
+									<img src="assets/img/icon-2.svg" alt="" width=48>
 								</div>
-								<div class="degree">23<sup>o</sup>C</div>
+								<div class="degree">20.4<sup>o</sup>C</div>
 								<small>18<sup>o</sup></small>
 							</div>
 						</div>
@@ -97,9 +97,9 @@
 							</div> <!-- .forecast-header -->
 							<div class="forecast-content">
 								<div class="forecast-icon">
-									<img src="images/icons/icon-12.svg" alt="" width=48>
+									<img src="assets/img/icon-1.svg" alt="" width=48>
 								</div>
-								<div class="degree">23<sup>o</sup>C</div>
+								<div class="degree">25.0<sup>o</sup>C</div>
 								<small>18<sup>o</sup></small>
 							</div>
 						</div>
@@ -109,9 +109,9 @@
 							</div> <!-- .forecast-header -->
 							<div class="forecast-content">
 								<div class="forecast-icon">
-									<img src="images/icons/icon-13.svg" alt="" width=48>
+									<img src="assets/img/icon-1.svg" alt="" width=48>
 								</div>
-								<div class="degree">23<sup>o</sup>C</div>
+								<div class="degree">23.0<sup>o</sup>C</div>
 								<small>18<sup>o</sup></small>
 							</div>
 						</div>
@@ -121,7 +121,7 @@
 							</div> <!-- .forecast-header -->
 							<div class="forecast-content">
 								<div class="forecast-icon">
-									<img src="images/icons/icon-14.svg" alt="" width=48>
+									<img src="assets/img/icons/icon-14.svg" alt="" width=48>
 								</div>
 								<div class="degree">23<sup>o</sup>C</div>
 								<small>18<sup>o</sup></small>
@@ -133,33 +133,33 @@
 			<main class="main-content">
 				<div class="fullwidth-block">
 					<div class="container">
-						<h2 class="section-title">Live cameras</h2>
+						<h2 class="section-title">Live Weather</h2>
 						<div class="row">
 							<div class="col-md-3 col-sm-6">
 								<div class="live-camera">
-									<figure class="live-camera-cover"><img src="images/live-camera-1.jpg" alt=""></figure>
-									<h3 class="location">New York</h3>
+									<figure class="live-camera-cover"><img src="assets/img/delhi.png" alt=""></figure>
+									<h3 class="location">New Delhi</h3>
+									<p><small class="date">{{this.weatherData?.location.localtime}}</small></p>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6">
+								<div class="live-camera">
+									<figure class="live-camera-cover"><img src="assets/img/pune.png" alt=""></figure>
+									<h3 class="location">Pune</h3>
 									<small class="date">8 oct, 8:00AM</small>
 								</div>
 							</div>
 							<div class="col-md-3 col-sm-6">
 								<div class="live-camera">
-									<figure class="live-camera-cover"><img src="images/live-camera-2.jpg" alt=""></figure>
-									<h3 class="location">Los Angeles</h3>
+									<figure class="live-camera-cover"><img src="assets/img/lucknow.png" alt=""></figure>
+									<h3 class="location">Lucknow</h3>
 									<small class="date">8 oct, 8:00AM</small>
 								</div>
 							</div>
 							<div class="col-md-3 col-sm-6">
 								<div class="live-camera">
-									<figure class="live-camera-cover"><img src="images/live-camera-3.jpg" alt=""></figure>
-									<h3 class="location">Chicago</h3>
-									<small class="date">8 oct, 8:00AM</small>
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-6">
-								<div class="live-camera">
-									<figure class="live-camera-cover"><img src="images/live-camera-4.jpg" alt=""></figure>
-									<h3 class="location">London</h3>
+									<figure class="live-camera-cover"><img src="assets/img/mumbai.png" alt=""></figure>
+									<h3 class="location">Mumbai</h3>
 									<small class="date">8 oct, 8:00AM</small>
 								</div>
 							</div>
@@ -168,10 +168,5 @@
 				</div>
 </main> <!-- .main-content -->
 
-		</div>
-		
-	    <script src="js/jquery-1.11.1.min.js"></script>
-		<script src="js/plugins.js"></script>
-		<script src="js/app.js"></script>
-		
+		</div>		
 	</body>

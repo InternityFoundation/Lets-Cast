@@ -256,9 +256,44 @@
  /*
   * Reusable Components Style
   */
+  .forecast:hover {
+    transform: translateY(5px) scale(1.025);
+    opacity: 1.5;
+    box-shadow: 0 0 30px -2px #1a1a1a;
+    transition: 0.35s;
+    z-index: 2;
+    color: red;
+}
+input[type="submit"]:hover {
+  transform: translateY(1px) scale(1.025);
+  opacity: 1.5;
+  box-shadow: 0 0 15px -2px #1a1a1a;
+  transition: 0.35s;
+  z-index: 2;
+}
+
+.site-header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  min-height: 100px;
+  z-index: 10;
+  background-color: #303F9F;
+}
+.forecast-icon:hover {
+  transform: translateY(-3px) scale(1.01);
+  opacity: 1.5;
+  box-shadow: 0 0 5px 0px #323544;
+  transition: 0.35s;
+  z-index: 2;
+}
+
+.num:hover {
+  color: chartreuse;
+}
  .button, form input[type="submit"], form button, form input[type="reset"] {
    border: none;
-   background: #009ad8;
+   background: #E22D2D;
    padding: 10px 20px;
    border-radius: 30px;
    color: white; }
@@ -1126,7 +1161,7 @@
        margin-bottom: 5px;
        font-size: 16px;
        font-size: 1.1428571429em;
-       color: white; }
+       color: #E22D2D; }
      .site-header .branding .site-description {
        font-size: 10px;
        font-size: 0.7142857143em;
@@ -1151,8 +1186,8 @@
        .main-navigation .menu-toggle {
          display: inline-block; } }
      .main-navigation .menu-toggle:hover, .main-navigation .menu-toggle:active {
-       border-color: #009ad8;
-       color: #009ad8; }
+       border-color: #E22D2D;
+       color: #E22D2D; }
    .main-navigation .menu {
      list-style: none;
      display: inline-block;
@@ -1178,8 +1213,8 @@
                  transition: .3s ease;
          font-weight: 400; }
        .main-navigation .menu .menu-item.current-menu-item a, .main-navigation .menu .menu-item:hover a {
-         border-color: #009ad8;
-         color: #009ad8; }
+         border-color: #E22D2D;
+         color: #E22D2D; }
  
  .mobile-navigation {
    padding: 30px 0 0;
@@ -1206,9 +1241,12 @@
          color: #009ad8; }
  
  .hero {
-   background-size: cover;
-   padding: 70px 0;
-   min-height: 350px; }
+  background-size: cover;
+  position: relative;
+  padding: 70px 0;
+  min-height: 350px;
+  top: 0;
+  margin-top: 140px; }
  
  .find-location {
    position: relative;
@@ -1217,7 +1255,7 @@
      width: 100%;
      padding: 20px 50px 20px 20px;
      background: #bdc2dd;
-     color: white; }
+     color: #1e202b; }
    .find-location input[type="submit"] {
      position: absolute;
      top: 5px;
